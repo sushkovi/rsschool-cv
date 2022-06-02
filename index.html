@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CV Vlad Sushko</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header">
+				<div class="header__logo">
+					<img src="img/logo.svg" alt="logo" />
+					<span>Vlad Sushko</span>
+				</div>
+				<nav class="header__nav">
+					<ul class="header__nav-list">
+						<li class="header__nav-item"><a href="#contacts">Contacts</a></li>
+						<li class="header__nav-item"><a href="#about">About Me</a></li>
+						<li class="header__nav-item"><a href="#skills">Skills</a></li>
+						<li class="header__nav-item">
+							<a href="#codewars-code">CodeWars Code</a>
+						</li>
+						<li class="header__nav-item"><a href="#education">Education</a></li>
+						<li class="header__nav-item"><a href="#language">Language</a></li>
+					</ul>
+				</nav>
+			</header>
+			<main class="main">
+				<div class="main__title">
+					<h1>Hi my name is Vlad Sushko</h1>
+					<img
+						src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif"
+						width="30px"
+					/>
+				</div>
+				<div class="cover"><img src="./img/Cover.png" alt="cover" /></div>
+				<div class="contacts" id="contacts">
+					<h2 class="contact__title title">Contacts</h2>
+					<ul class="contact__list">
+						<li class="contact__item">
+							Phone number: <a href="tel:+375293635845">+375 29 363 58 45</a>
+						</li>
+						<li class="contact__item">Discord: <span>MrCoobik#1974</span></li>
+						<li class="contact__item">
+							GitHub:
+							<a href="https://github.com/sushkovi"
+								>https://github.com/sushkovi</a
+							>
+						</li>
+						<li class="contact__item">
+							My Website:
+							<a href="https://sushkovi.vercel.app/"
+								>https://sushkovi.vercel.app/</a
+							>
+						</li>
+					</ul>
+				</div>
+				<div class="about" id="about">
+					<h2 class="about__title title">About Me</h2>
+					<p class="about__text">
+						I am a web developer with a passion for programming. I have
+						experience in the development of web applications and development of
+						mobile applications. I have a strong understanding of the front-end
+						and back-end technologies. I am a team player and I am always ready
+						to learn new technologies.
+					</p>
+				</div>
+				<div class="skills" id="skills">
+					<h2 class="skills__title">Skills</h2>
+					<div class="skills__list">
+						<div class="skills__item">
+							<h3 class="skills__item-title">My Hard Skills:</h3>
+							<ul class="skills__item-list">
+								<li class="skills__item-item">React</li>
+								<li class="skills__item-item">TypeScript</li>
+								<li class="skills__item-item">Redux Toolkit</li>
+								<li class="skills__item-item">GraphQl</li>
+								<li class="skills__item-item">React Native</li>
+								<li class="skills__item-item">HTML</li>
+								<li class="skills__item-item">CSS</li>
+								<li class="skills__item-item">JavaScript</li>
+								<li class="skills__item-item">React</li>
+								<li class="skills__item-item">Sass</li>
+								<li class="skills__item-item">Bootstrap</li>
+								<li class="skills__item-item">Materialize</li>
+								<li class="skills__item-item">AJAX</li>
+								<li class="skills__item-item">JSON</li>
+								<li class="skills__item-item">Git</li>
+								<li class="skills__item-item">GitHub</li>
+								<li class="skills__item-item">Webpack</li>
+								<li class="skills__item-item">Babel</li>
+							</ul>
+						</div>
+						<div class="skills__item">
+							<h3 class="skills__item-title">My Soft Skills:</h3>
+							<ul class="skills__item-list">
+								<li class="skills__item-item">Communication Self-management</li>
+								<li class="skills__item-item">Teamwork</li>
+								<li class="skills__item-item">
+									Negotiation and Conflict Resolution
+								</li>
+								<li class="skills__item-item">Flexibility Responsibility</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="codewars-code" id="codewars-code">
+					<h2 class="codewars-code__title title">
+						Code Example
+						<a href="https://www.codewars.com/users/sushkovi">Codewars</a>
+					</h2>
+					<pre>
+function validSolution(board) {
+	let valid = true;
+	const testvaliditiy = (arr) => {
+		let set = new Set(arr);
+		if (arr.includes(0) || [...set].length !== 9) {
+			return false;
+		} else {
+			return true;
+		}
+	};
+
+	console.log('row testing ...');
+	for (i = 0; i < board.length; i++) {
+		if (!valid) break;
+		let row = [];
+		for (j = 0; j < board.length; j++) {
+			row.push(board[i][j]);
+		}
+		// console.log(row)
+		valid = testvaliditiy(row);
+	}
+
+	//column testing
+	console.log('Column testing ...');
+	for (i = 0; i < board.length; i++) {
+		let col = [];
+		for (j = 0; j < board.length; j++) {
+			col.push(board[j][i]);
+		}
+		valid = testvaliditiy(col);
+		if (!valid) break;
+	}
+
+	//3x3 testing
+	console.log('Cube 3x3 testing ...');
+	let row = 0;
+	let column = 0;
+	while (row < 9 && column < 9) {
+		let cube = [];
+		for (i = row; i < row + 3; i++) {
+			for (j = column; j < column + 3; j++) {
+				cube.push(board[i][j]);
+			}
+		}
+		row += 3;
+		valid = testvaliditiy(cube);
+		if (!valid) break;
+		if (row == 9 && column != 9) {
+			column += 3;
+			row = 0;
+		}
+	}
+	return valid;
+}
+				</pre
+					>
+				</div>
+				<div class="education" id="education">
+					<h2 class="education__title title">Education</h2>
+					<a href="https://bspu.by/" target="_blank"
+						>Belarusian State Pedagogical University Named after Maxim Tank
+						(BSPU)</a
+					>
+				</div>
+				<div class="language" id="language">
+					<h2 class="language__title title">Language</h2>
+					<p><span>Russian:</span> Native</p>
+					<p><span>English:</span> A2>B1</p>
+				</div>
+			</main>
+			<footer class="footer">Copyright &copy; 2022</footer>
+		</div>
+	</body>
+</html>
