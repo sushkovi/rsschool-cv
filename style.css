@@ -10,7 +10,6 @@ html {
 .title {
 	font-size: 32px;
 	font-weight: bold;
-	margin: 0 0 20px 0;
 	text-align: center;
 	padding: 10px;
 	border-radius: 10px;
@@ -88,6 +87,9 @@ pre {
 	margin-right: 10px;
 	color: #f36d33;
 }
+.main__title img {
+	width: 30px;
+}
 .cover img {
 	width: 100%;
 	margin-bottom: 20px;
@@ -100,12 +102,41 @@ pre {
 .contact__item span {
 	font-weight: 500;
 }
+.about__desc {
+	display: flex;
+	align-items: center;
+}
+.about__my-photo {
+	width: 200px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	margin-right: 10px;
+}
+.about__text {
+}
 .footer {
 	padding: 10px;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	border-radius: 10px;
 	background-color: #333;
 	color: #f36d33;
+}
+.footer__rs-logo {
+	width: 60px;
+	filter: invert(100%);
+}
+.footer__gh-logo {
+	width: 30px;
+	filter: invert(100%);
+}
+
+.footer__rs-logo:hover {
+	width: 60px;
+	filter: invert(50%);
+}
+.footer__gh-logo:hover {
+	width: 30px;
+	filter: invert(50%);
 }
